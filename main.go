@@ -17,5 +17,8 @@ func main() {
 		os.Exit(1)
 	}
 
-	fmt.Println("Карта прочитана, точек:", mapData.PointCount())
+	if err := runApp(mapData); err != nil {
+		fmt.Fprintln(os.Stderr, "Ошибка окна:", err)
+		os.Exit(1)
+	}
 }
